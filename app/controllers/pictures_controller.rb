@@ -23,7 +23,7 @@ def create_row
     p.save
     
     @count = Photo.count
-    render("pic_templates/new_pic.html.erb")
+    redirect_to("/photos")
 end
 
 
@@ -69,7 +69,7 @@ def update_row
     p.caption = new_caption
     p.save
     
-render("pic_templates/update.html.erb")
+redirect_to("/photos/" + @index.to_s )
 end
 
 def destroy_row
@@ -80,7 +80,7 @@ def destroy_row
     
     @count = Photo.count
     
-render("pic_templates/destroy.html.erb")
+redirect_to("/photos")
 end
 
 
