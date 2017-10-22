@@ -1,5 +1,14 @@
 class PicturesController < ApplicationController
 
+def home_page
+
+@all_photos = Photo.all.reverse
+
+render("pic_templates/index.html.erb")
+
+end
+
+
 def new_form
     
     render("pic_templates/blank_form.html.erb")
@@ -20,7 +29,7 @@ end
 
 
 def index
-    @all_photos = Photo.all
+    @all_photos = Photo.all.reverse
     
 render("pic_templates/index.html.erb")
 end
