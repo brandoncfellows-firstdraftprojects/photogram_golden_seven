@@ -4,17 +4,17 @@
 </p>
 <img src="<%= @the_image_url %>">
 <p>
-  about 1 hour ago
+  about <%= @time_between %> ago
 </p>
 
 <a href="/photos" class="btn btn-default">
   Go back
 </a>
 
-<a href="/photos/621/edit" class="btn btn-default">
+<a href="/photos/<%= @visited_id %>/edit" class="btn btn-default">
   Edit
 </a>
 
-<a href="/delete_photo/621" class="btn btn-default">
+<a href="/delete_photo/<%=@visited_id %>" class="btn btn-default">
   Delete
 </a>

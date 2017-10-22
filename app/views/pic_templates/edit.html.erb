@@ -1,1 +1,15 @@
-<h1>Hi</h1>
+<h1>Edit photo <%= @index %></h1>
+
+<form action="/update_photo/<%= @index %>">
+    <div>
+        <label for="url_input">Image URL</label>
+        <input id="url_input" type="text" name="image_url" value = "<%= Photo.find(@index).source %>">
+    </div>
+    <div>
+        <label for="caption_input">Caption</label>
+        <input id="caption_input" type="text" name="caption" value = "<%= Photo.find(@index).caption %>">
+    </div>
+    <button>
+        Update Photo
+    </button>
+</form>

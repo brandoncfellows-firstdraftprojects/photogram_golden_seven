@@ -1,7 +1,14 @@
-<h1>Hi</h1>
+<h1>All Photos</h1>
 
-<ul>
-    <li>first photo goes here</li>
-    <li>second photo goes here</li>
-    
-</ul>
+<a href="/photos/new">Add a new photo</a>
+
+<% @all_photos.each do |pic| %>
+<div>
+<img src = "<%= pic.source %>" >
+<div>
+<a href="/photos/<%= pic.id%>">Show Details</a>
+<a href="/photos/<%= pic.id %>/edit">Edit</a>
+<a href="/delete_photo/<%= pic.id %>">Delete</a>
+</div>
+</div>
+<% end %>
